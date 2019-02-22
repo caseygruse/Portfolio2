@@ -1,5 +1,5 @@
 ﻿import React, { Component } from 'react';
-
+import './EducationCss.css';
 export class Education extends Component {
     
     static displayName = Education.name;
@@ -7,7 +7,8 @@ export class Education extends Component {
     render() {
         return (
             <div>
-                <h1> Education Test!!! </h1>
+                <h1 id="title"> Education </h1>
+                <h3 id="summary"> Summary</h3>
             </div>
         );
     }

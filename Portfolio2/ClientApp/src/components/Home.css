@@ -1,0 +1,17 @@
+﻿
+body {
+    
+    
+    background: url(../Images/backgroundImage.jpg)no-repeat center center fixed;
+    background-size: cover;
+    
+}    
+
+    
+
+.name{
+    text-align: center;
+    font-family: Forte;
+    
+    
+}

@@ -6,6 +6,7 @@ import { Education } from './components/Education';
 
 
 
+
 export default class App extends Component {
   static displayName = App.name;
   static displayName = App.name;
