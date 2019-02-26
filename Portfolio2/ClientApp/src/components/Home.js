@@ -7,10 +7,12 @@ export class Home extends Component {
  
   render () {
       return (
+          
             <div id="main">
                 <h1 class="name">Casey</h1>
                 <h2 class="name">Gruse</h2>      
-            </div>     
+              </div> 
+          
     );
   }
 }
