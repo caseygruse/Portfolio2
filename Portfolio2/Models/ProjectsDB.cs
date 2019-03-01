@@ -3,20 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Portfolio2.Data;
+using Microsoft.EntityFrameworkCore;
+
 
 namespace Portfolio2.Models
 {
     public class ProjectsDB
     {
-        private PortfolioContext context;
+        PortfolioContext context;
 
-        private List<Project> GetAllProjects(PortfolioContext context)
+        public ProjectsDB(PortfolioContext context)
+        {
+            this.context = context;
+        }
+
+        public List<Project> GetAllProjects()
         {
             List<Project> AllProjects = context.Projects.ToList();
             return AllProjects;
         }
 
-        private void CreateProject(PortfolioContext context, Project project)
+        public void CreateProject(Project project)
         {
             context.Projects.Add(project);
             context.SaveChanges();
