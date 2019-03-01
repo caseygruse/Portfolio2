@@ -22,7 +22,25 @@
 }
 
 #firstLast{
-    padding-top: 50px;
+    padding-top: 100px;
+}
+
+.left{
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.middle {
+    text-align: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+.right {
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
 }
 
 
