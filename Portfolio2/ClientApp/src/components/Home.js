@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export class Home extends Component {
   static displayName = Home.name;
- 
+ //https://www.jobscan.co/
   render () {
       return (
         <div>
