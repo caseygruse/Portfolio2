@@ -5,6 +5,7 @@ import { Home } from './components/Home';
 import { Education } from './components/Education';
 import { About } from './components/About';
 import { Projects } from './components/Projects';
+import './components/Base.css';
 
 
 
@@ -19,13 +20,13 @@ export default class App extends Component {
 
   render () {
       return (
-        <div>
-          <Layout>
+          <div>
+             <Layout>
                 <Route exact path='/' component={Home} />
                 <Route path="/Education" component={Education} />
                 <Route path="/About" component={About} />
                 <Route path="/Projects" component={Projects} />
-              </Layout>            
+            </Layout>  
         </div>
     );
   }

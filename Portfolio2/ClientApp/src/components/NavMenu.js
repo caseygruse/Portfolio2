@@ -24,7 +24,7 @@ export class NavMenu extends Component {
   render () {
     return (
       <header>
-        <Navbar className="navbar-expand-sm navbar-toggleable-sm ng-white border-bottom" light>
+        <Navbar className="navbar-expand-sm mr-auto navbar-toggleable-sm ng-white border-bottom" light>
 
                 <Container>
             <NavbarBrand tag={Link} to="/" className="siteTitle">Portfolio2</NavbarBrand>

@@ -1,4 +1,8 @@
-﻿import React, { Component } from 'react';
+﻿// External Dependencies
+import React, { Component } from 'react';
+
+// Child Components
+import { PageHeader } from './Shared/PageHeader';
 
 export class Projects extends Component {
     //static displayName = Projects.name;
@@ -9,33 +13,50 @@ export class Projects extends Component {
         };
     }
 
+    // -------------------------
+    // Network Requests
+    // -------------------------
+
     componentDidMount() {
-        fetch('api/controller/GetProjects')
-            .then(results => {
+        fetch('api/controller/GetProjects').then(results => {
                 return results.json();
-            }).then(data => {
-                console.log(data);
-                let projects = data.map((Project) => {
-                    return (
-                        <div key={Project.results}>
-                            <p>{Project.Name}</p>
-                        </div>
-                    )
-                })
-                this.setState({ projects: projects });
+        }).then(data => {        
+            //putting JSON objects into component state.
+            this.setState({ projects: data });
+        })
+    }
 
-                })
-        }
-    
-    fetchData() { }
-    
+    // -------------------------
+    // Component Builders
+    // -------------------------
+
+    buildProjectRows(projects) {
+        console.log(projects);
+        const projectRows = [];
+
+        projects.forEach((project) => {
+            projectRows.push(
+                <div key={project.projectId}>
+                    <p>{project.name}</p>
+                    <p>This is my project description</p>
+                </div>
+            )
+        })
+        return projectRows;
+    }
+
     render() {
+        console.log('RENDERING')
         return (
-            <div>
-                {this.state.projects}
+            <div className="pageContent">
+                <div id='homeComponent'>
 
-                <h1 id="title"> Projects </h1>
-                <h3 id="summary"> Summary</h3>
+                    <PageHeader header='Projects' />
+                    
+                    <h3 id="summary"> Summary</h3>
+
+                    {this.buildProjectRows(this.state.projects)}
+                </div>
             </div>
         );
     }

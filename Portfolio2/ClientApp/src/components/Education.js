@@ -6,9 +6,11 @@ export class Education extends Component {
 
     render() {
         return (
-            <div>
+            <div className='pageContent'>
+            <div id='educationComponent'>
                 <h1 id="title"> Education </h1>
                 <h3 id="summary"> Summary</h3>
+                </div>
             </div>
         );
     }
