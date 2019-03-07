@@ -1,5 +1,6 @@
 ﻿import React, { Component } from 'react';
 import './EducationCss.css';
+import { PageHeader } from './Shared/PageHeader';
 export class Education extends Component {
     
     static displayName = Education.name;
@@ -8,8 +9,8 @@ export class Education extends Component {
         return (
             <div className='pageContent'>
             <div id='educationComponent'>
-                <h1 id="title"> Education </h1>
-                <h3 id="summary"> Summary</h3>
+                <PageHeader header="Education" />
+                
                 </div>
             </div>
         );

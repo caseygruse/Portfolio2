@@ -51,9 +51,7 @@ export class Projects extends Component {
             <div className="pageContent">
                 <div id='homeComponent'>
 
-                    <PageHeader header='Projects' />
-                    
-                    <h3 id="summary"> Summary</h3>
+                    <PageHeader header='Projects' />                                    
 
                     {this.buildProjectRows(this.state.projects)}
                 </div>

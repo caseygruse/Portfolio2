@@ -1,8 +1,4 @@
 ﻿
-#main {
-    
-
-}
 
 
 
@@ -13,32 +9,26 @@
     
     
 }
-.container{
+/*.container{
     margin: 0px;
+    
+}*/
+
+#firstLast{
+    padding-top: 40px;
+}
+
+#caseyPic {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
     
 }
 
-#firstLast{
-    padding-top: 100px;
-}
 
-.left{
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-}
 
-.middle {
-    text-align: center;
-    margin: 0px;
-    padding: 0px;
-}
-
-.right {
-    margin: 0px;
-    padding: 0px;
-    text-align: center;
-}
 
 
 
