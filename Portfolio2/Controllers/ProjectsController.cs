@@ -25,6 +25,7 @@ namespace Portfolio2.Controllers
 
 
         [HttpGet]
+        [Route("GetProjects")]
         public List<Project> GetAllProjects()
         {
             return db.GetAllProjects();
