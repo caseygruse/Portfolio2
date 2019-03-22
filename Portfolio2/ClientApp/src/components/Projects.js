@@ -1,10 +1,11 @@
-﻿// External Dependencies
+﻿/// <reference path="openingstatement.js" />
+// External Dependencies
 import React, { Component } from 'react';
 import './Css/Projects.css';
 // Child Components
 import { PageHeader } from './Shared/PageHeader';
 
-let contents;
+//let contents;
 
 export class Projects extends Component {
     //static displayName = Projects.name;
@@ -12,9 +13,10 @@ export class Projects extends Component {
         super(props);
         this.state = {
             projects: [],
-            singleProject: [],
+            singleProject: "",
         };
-        this.displayProjectInformation = this.displayProjectInformation.bind(this);
+        
+        this.displayProject = this.displayProject.bind(this);
         this.displayProjectNames = this.displayProjectNames.bind(this);
     }
 
@@ -50,26 +52,33 @@ export class Projects extends Component {
     //    return projectRows;
     //}
 
-    ///displays project names 
-    ///loops through projects and displays names  
+    
+    ///loops through projects and displays names on buttons
+    ///
     displayProjectNames(projects) {
         const projectNames = [];
-        
         projects.forEach((project) => {
             projectNames.push(
                 <div key={project.projectId} className="col-lg-4 centerNames">
-                    <button onClick={this.displayProjectInformation(projects, project.name)}> {project.name} </button>                          
+                    <button onClick={() => this.displayProject(projects, project.name)}>{project.name}</button>                          
                 </div>               
             )
         })
-
         //https://stackoverflow.com/questions/29810914/react-js-onclick-cant-pass-value-to-method
-
         return projectNames;
     }
-    //pass btn value by using this.value
 
     ///TO DO:  When project name is clicked display all project properites below project names.
+    displayProject(projects, projectName) {
+        for (var i = 0; i < projects.length; i++) {
+            if (projectName === projects[i].name) {
+                this.setState({
+                    singleProject: <div> <p>{projects[i].name}</p></div>});
+            }
+        }
+        //return singleProject;
+    }
+
 
     render() {
         console.log('RENDERING')
@@ -83,7 +92,7 @@ export class Projects extends Component {
                         {this.displayProjectNames(this.state.projects)}
                     </div>
 
-                    {contents}
+                    <div>{this.state.singleProject}</div>
 
                     {/*{this.buildProjectRows(this.state.projects)} */}
                 </div>
