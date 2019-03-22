@@ -54,7 +54,7 @@ export class Projects extends Component {
 
     
     ///loops through projects and displays names on buttons
-    ///
+    ///onclicks will display project information below the buttons.
     displayProjectNames(projects) {
         const projectNames = [];
         projects.forEach((project) => {
@@ -72,6 +72,8 @@ export class Projects extends Component {
     displayProject(projects, projectName) {
         for (var i = 0; i < projects.length; i++) {
             if (projectName === projects[i].name) {
+                //the project name button that is clicked will display
+                //the projects info by changing singlePorjects state.
                 this.setState({
                     singleProject: <div> <p>{projects[i].name}</p></div>});
             }
@@ -91,7 +93,7 @@ export class Projects extends Component {
                     <div className="row">
                         {this.displayProjectNames(this.state.projects)}
                     </div>
-
+                    
                     <div>{this.state.singleProject}</div>
 
                     {/*{this.buildProjectRows(this.state.projects)} */}
