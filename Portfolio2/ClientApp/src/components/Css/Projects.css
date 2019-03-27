@@ -3,4 +3,24 @@
 
 .centerNames{
     text-align: center;
+    margin-top: 20px;
+}
+
+.projectWrapper{
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    border: 2px solid black;
+    height: 80vh;
+    width: 100vh;
+}
+
+.centerInfo{
+    text-align: center;
+}
+
+.leftInfo{
+    text-align: left;
+    padding-left: 20px;
 }
