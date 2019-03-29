@@ -6,7 +6,7 @@ import './Css/Projects.css';
 import { PageHeader } from './Shared/PageHeader';
 
 /// To do: Figure out how to get correct photo Url from db and into image scr in onclick method.
-let photo = "";
+let photo = '';
 
 export class Projects extends Component {
     //static displayName = Projects.name;
@@ -75,6 +75,8 @@ export class Projects extends Component {
             if (projectName === projects[i].name) {
                 //the project name button that is clicked will display
                 //the projects info by changing singlePorjects state.
+
+                //To do 
                 photo = projects[i].PhotoUrl 
                 this.setState({
                     singleProject: <div className="projectWrapper">
@@ -83,9 +85,8 @@ export class Projects extends Component {
                                         <p className="leftInfo">{projects[i].description}</p>
                                         <h4 className="leftInfo">Github:</h4>
                                         <a href={projects[i].link} className="leftInfo">{projects[i].link}</a>
-                                        
-                                        <img src={photo} alt="screen shot of a Yahtzy game"/>
-
+                        {/*../Images/yatzyImg.PNG*/}                     
+                        <img src={require('../Images/yatzyImg.PNG')} alt="screen shot of a Yahtzy game"/>
                                     </div>
                 });
             }
