@@ -34,6 +34,10 @@ export class Projects extends Component {
             //putting JSON objects into component state.
             this.setState({ projects: data });
             })
+        //fill projectPics with project screen shots that match the order of projects
+        //EliteK9 0
+        projectPics.push(<img src={require('../Images/EliteK9ScreenShot.PNG')} alt="screen shot of a Yahtzy game" className="projectPic" />)
+        //yahtzy 1                          
         projectPics.push(<img src={require('../Images/yatzyImg.PNG')} alt="screen shot of a Yahtzy game" className="projectPic" />);
     }
 
@@ -78,7 +82,7 @@ export class Projects extends Component {
             if (projectName === projects[i].name) {
                 //the project name button that is clicked will display
                 //the projects info by changing singlePorjects state.
-                let photo = projectPics[0];
+                let photo = projectPics[i];
                 //To do                 
                 this.setState({
                     singleProject: <div className="projectWrapper">

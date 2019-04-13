@@ -8,6 +8,14 @@
     margin: 0px;
     /*padding: 0px;*/
     height: 100vh;   
+    
+}
+@media only screen and (max-width: 600px) {
+    .pageContent {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+    }
 }
 
 #title {
