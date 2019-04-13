@@ -5,8 +5,10 @@ import './Css/Projects.css';
 // Child Components
 import { PageHeader } from './Shared/PageHeader';
 
-/// To do: Figure out how to get correct photo Url from db and into image scr in onclick method.
-let photo = '';
+//To do: fill projectPics with project photos that correspond to the order the projects
+//are in the db. pull the correct photo from the array to match the clicked
+// on project.
+let projectPics = [];
 
 export class Projects extends Component {
     //static displayName = Projects.name;
@@ -20,7 +22,7 @@ export class Projects extends Component {
         this.displayProject = this.displayProject.bind(this);
         this.displayProjectNames = this.displayProjectNames.bind(this);
     }
-
+    
     // -------------------------
     // Network Requests
     // -------------------------
@@ -31,7 +33,8 @@ export class Projects extends Component {
         }).then(data => {        
             //putting JSON objects into component state.
             this.setState({ projects: data });
-        })
+            })
+        projectPics.push(<img src={require('../Images/yatzyImg.PNG')} alt="screen shot of a Yahtzy game" className="projectPic" />);
     }
 
     // -------------------------
@@ -75,18 +78,18 @@ export class Projects extends Component {
             if (projectName === projects[i].name) {
                 //the project name button that is clicked will display
                 //the projects info by changing singlePorjects state.
-
-                //To do 
-                photo = projects[i].PhotoUrl 
+                let photo = projectPics[0];
+                //To do                 
                 this.setState({
                     singleProject: <div className="projectWrapper">
                                         <h2 className="centerInfo">{projects[i].name}</h2>
                                         <h4 className="leftInfo">Description:</h4>
                                         <p className="leftInfo">{projects[i].description}</p>
                                         <h4 className="leftInfo">Github:</h4>
-                                        <a href={projects[i].link} className="leftInfo">{projects[i].link}</a>
-                        {/*../Images/yatzyImg.PNG*/}                     
-                        <img src={require('../Images/yatzyImg.PNG')} alt="screen shot of a Yahtzy game"/>
+                        <a href={projects[i].link} className="leftInfo">{projects[i].link}</a>
+                        {photo}
+                        {/*../Images/yatzyImg.PNG*/}                          
+                        {/*<img src={require('../Images/yatzyImg.PNG')} alt="screen shot of a Yahtzy game" className="projectPic"/> */}
                                     </div>
                 });
             }
@@ -107,7 +110,7 @@ export class Projects extends Component {
                     </div>
                     
                     <div>{this.state.singleProject}</div>
-
+                    <br />
                     {/*{this.buildProjectRows(this.state.projects)} */}
                 </div>
             </div>
