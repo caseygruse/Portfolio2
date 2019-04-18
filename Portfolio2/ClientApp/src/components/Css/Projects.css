@@ -3,8 +3,15 @@
 
 .centerNames{
     text-align: center;
-    margin-top: 20px;
+    flex: 1;
+    cursor: pointer;
+    font-size: large;
+    color: blue;     
 }
+.centerNames:hover{
+    color: lightblue;
+}
+
 
 .projectWrapper{
     margin-top: 30px;
@@ -12,20 +19,47 @@
     margin-right: auto;
     margin-bottom: auto;
     /*border: 2px solid black;*/
-    height: 80vh;
-    width: 100vh;
+    /*height: 80vh;*/
+    /*width: 100vh;*/
+    /*display: flex;*/
 }
 
 .centerInfo{
-    text-align: center;
+    /*text-align: center;*/
+    padding-top: 20px;
+    display: flex;
 }
 
-.leftInfo{
+.leftInfo {
     text-align: left;
     padding-left: 20px;
+    display: flex;
 }
 
 #homeComponent{
     margin: 0px;
     padding: 0px;
+}
+
+.projectPic {
+    width: 100%;
+    height: auto;
+    padding: 0px 10px 0px 10px;
+}
+
+.projectButtons{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+}
+
+.sections {
+    text-align: left;
+    padding-left: 20px;
+    padding-top: 20px;
+    display: flex;
+}
+
+.pictureSpace{
+    padding-bottom: 43px;
 }

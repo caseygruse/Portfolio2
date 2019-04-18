@@ -67,8 +67,8 @@ export class Projects extends Component {
         const projectNames = [];
         projects.forEach((project) => {
             projectNames.push(
-                <div key={project.projectId} className="col-lg-4 centerNames">
-                    <button onClick={() => this.displayProject(projects, project.name)}>{project.name}</button>                          
+                <div key={project.projectId} className="centerNames">
+                    <div onClick={() => this.displayProject(projects, project.name)}>{project.name}</div>                          
                 </div>               
             )
         })
@@ -86,11 +86,11 @@ export class Projects extends Component {
                 //To do                 
                 this.setState({
                     singleProject: <div className="projectWrapper">
-                                        <h2 className="centerInfo">{projects[i].name}</h2>
-                                        <h4 className="leftInfo">Description:</h4>
+                                        <h2 className="centerInfo">{projects[i].name}</h2> 
+                                        <h4 className="sections">Description:</h4>
                                         <p className="leftInfo">{projects[i].description}</p>
-                                        <h4 className="leftInfo">Github:</h4>
-                        <a href={projects[i].link} className="leftInfo">{projects[i].link}</a>
+                                        <h4 className="sections">Github:</h4>
+                        <a href={projects[i].link} className="leftInfo pictureSpace">{projects[i].link}</a>
                         {photo}
                         {/*../Images/yatzyImg.PNG*/}                          
                         {/*<img src={require('../Images/yatzyImg.PNG')} alt="screen shot of a Yahtzy game" className="projectPic"/> */}
@@ -109,12 +109,12 @@ export class Projects extends Component {
 
                     <PageHeader header='Projects' />                                    
 
-                    <div className="row">
+                    <div className="projectButtons">
                         {this.displayProjectNames(this.state.projects)}
                     </div>
                     
                     <div>{this.state.singleProject}</div>
-                    <br />
+                    
                     {/*{this.buildProjectRows(this.state.projects)} */}
                 </div>
             </div>
