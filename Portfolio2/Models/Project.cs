@@ -20,5 +20,8 @@ namespace Portfolio2.Models
         public string Link { get; set; }
         
         public string PhotoUrl { get; set; }
+
+        public string Summary { get; set; }
+
     }
 }
